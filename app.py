@@ -13,8 +13,9 @@ def load_model():
     try:
         return joblib.load('production_prediction_pipeline.pkl')
     except:
+        # Fallback if xgboost pipeline isn't there, try another
         try:
-            return joblib.load('production_prediction_pipeline.pkl') 
+            return joblib.load('best_crop_production_model.pkl') 
         except Exception as e:
             st.error("Model not found. Please ensure you saved the model as 'production_prediction_pipeline.pkl'.")
             st.stop()
