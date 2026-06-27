@@ -14,7 +14,7 @@ def load_model():
         return joblib.load('production_prediction_pipeline.pkl')
     except:
         try:
-            return joblib.load('production_prediction_model.pkl') 
+            return joblib.load('production_prediction_pipeline.pkl') 
         except Exception as e:
             st.error("Model not found. Please ensure you saved the model as 'production_prediction_model.pkl'.")
             st.stop()
