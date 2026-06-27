@@ -16,7 +16,7 @@ def load_model():
         try:
             return joblib.load('production_prediction_pipeline.pkl') 
         except Exception as e:
-            st.error("Model not found. Please ensure you saved the model as 'production_prediction_model.pkl'.")
+            st.error("Model not found. Please ensure you saved the model as 'production_prediction_pipeline.pkl'.")
             st.stop()
 
 @st.cache_data
